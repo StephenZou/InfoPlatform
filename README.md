@@ -1,0 +1,2 @@
+# InfoPlatform
+app using flask
