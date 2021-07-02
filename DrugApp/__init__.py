@@ -1,6 +1,7 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask
+from flask_bootstrap import Bootstrap
 
 
 def create_app(test_config=None):
@@ -24,9 +25,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    bootstrap = Bootstrap(app)
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
-    return app
+    # @app.route('/hello')
+    # def hello():
+    #     return 'Hello World!'
+    return bootstrap
