@@ -1,9 +1,9 @@
 import os
 
 from flask import Flask
-from flask_bootstrap import Bootstrap
+# from flask_bootstrap import Bootstrap
 
-bootstrap = Bootstrap()
+# bootstrap = Bootstrap()
 
 
 def create_app(test_config=None):
@@ -29,8 +29,8 @@ def create_app(test_config=None):
     from . import DataView
     app.register_blueprint(DataView.dv)
     # app.config.setdefault('BOOTSTRAP_QUERYSTRING-REVVING', True)
-    app.config.setdefault('BOOTSTRAP_SERVE_LOCAL', True)
-    bootstrap.init_app(app)
+    # app.config.setdefault('BOOTSTRAP_SERVE_LOCAL', True)
+    # bootstrap.init_app(app)
     # a simple page that says hello
     # @app.route('/hello')
     # def hello():
