@@ -21,8 +21,8 @@ $(document).ready(function () {
         }
 
     }, 100);
-    $(".nav-link-header").click(function () {
-        var side = $(".main-sidebar");
-        if (side.isVi)
-    });
+    // $(".nav-link-header").click(function () {
+    //     var side = $(".main-sidebar");
+    //     if (side.isVi)
+    // });
 });
