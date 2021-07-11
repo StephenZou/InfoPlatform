@@ -21,6 +21,9 @@ $(document).ready(function () {
         }
 
     }, 100);
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    });
     // $(".nav-link-header").click(function () {
     //     var side = $(".main-sidebar");
     //     if (side.isVi)
