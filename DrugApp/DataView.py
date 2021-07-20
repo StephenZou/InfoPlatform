@@ -1,4 +1,4 @@
-from flask import (Blueprint, render_template)
+from flask import (Blueprint, render_template, request)
 from DrugApp.model import ViewModel
 
 dv = Blueprint('data', __name__, url_prefix='/data')
@@ -13,3 +13,21 @@ def view_data():
     targets = []
     vm = ViewModel.ViewModel(diseases, drugs, indications, compounds, targets)
     return render_template('home.html', vm=vm)
+
+
+@dv.route('/compounds', methods=['GET'])
+def get_compounds():
+    disease = str(request.args.get('disease'))
+    print(disease)
+    if disease == 'disease1':
+        data = [20, 30, 40, 50, 60]
+    else:
+        data = [60, 50, 40, 30, 20]
+    return {'data': data}
+
+
+@dv.route('/detail', methods=['GET'])
+def get_detail():
+    disease = str(request.args.get('disease'))
+    print(disease)
+
