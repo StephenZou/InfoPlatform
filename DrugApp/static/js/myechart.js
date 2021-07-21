@@ -82,7 +82,17 @@ $(document).ready(function () {
         pageSize: 10,
         pageList: [10, 25, 50, 100],
         url: '/data/detail',
-        queryParamsType: '',
+        queryParams: function (params) {
+            var temp = {
+                rows: params.limit,                         //页面大小
+                page: (params.offset / params.limit) + 1,   //页码
+                sort: params.sort,      //排序列名
+                sortOrder: params.order, //排位命令（desc，asc）
+                disease: $("#selectedDisease").val()
+            };
+            return temp;
+
+        },
         sidePagination: 'server',
         columns: [{
             field: 'disease_id',

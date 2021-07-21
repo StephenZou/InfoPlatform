@@ -18,7 +18,6 @@ def view_data():
 @dv.route('/compounds', methods=['GET'])
 def get_compounds():
     disease = str(request.args.get('disease'))
-    print(disease)
     if disease == 'disease1':
         data = [20, 30, 40, 50, 60]
     else:
@@ -28,6 +27,60 @@ def get_compounds():
 
 @dv.route('/detail', methods=['GET'])
 def get_detail():
-    disease = str(request.args.get('disease'))
-    print(disease)
+    # disease = str(request.args.get('disease'))
+    # print(disease)
+    page_size = request.args.get('pageSize')
+    page_number = request.args.get('pageNumber')
 
+    print(request.args.get('rows'))
+    print(request.args.get('page'))
+    print(request.args.get('disease'))
+    data = {'total': 16, 'rows': [{'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'},
+                                 {'disease_id': '1', 'disease_name': '2', 'drug_inchikey': '3',
+                                  'drug_name': '4', 'com_inchikey': '5', 'tar_over_rate': '6',
+                                  'tc': '7', 'target_overlap_rate': '8'}]}
+    return data
