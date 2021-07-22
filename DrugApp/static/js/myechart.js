@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // database bar
     // $('#my-card-widget').CardWidget('toggle')
-    var dbChart = echarts.init(document.getElementById("chart1"), null, {renderer: 'svg'})
+    var dbChart = echarts.init(document.getElementById("chart1"), null, {renderer: 'svg'});
 
     function getCompounds() {
         $.ajax({
@@ -61,10 +61,10 @@ $(document).ready(function () {
                             }
                         }]
                     }]
-                }
-                dbChart.setOption(options)
+                };
+                dbChart.setOption(options);
             }
-        })
+        });
     }
 
     getCompounds();
@@ -127,6 +127,22 @@ $(document).ready(function () {
             title: 'target_overlap_rate',
             align: 'center'
         }]
-    })
+    });
+
+    var drugChart = echarts.init(document.getElementById("chartdrug"), null, {renderer: 'svg'});
+
+    function getFreqDrugs() {
+        $.ajax({
+            type: "GET",
+            url: "/data/freqdrugs",
+            data: {disease: $("#selectedDisease").val()},
+            contentType: 'application/json',
+            dataType: "json",
+            success: function (result) {
+                var data = result.data;
+                var labels = result.labels;
+            }
+        });
+    }
 
 })
